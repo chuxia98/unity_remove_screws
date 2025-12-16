@@ -3,6 +3,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TradplusSDK.Api;
 
 namespace Watermelon
 {
@@ -62,7 +63,15 @@ namespace Watermelon
                 {
                     GameLoading.SimpleLoad();
                 }
+                TradplusAds.Instance().OnInitFinish += OnInitFinish;
+                TradplusAds.Instance().InitSDK("7FA38B0A1661159EE7012A9CB1A87E11");
             }
+        }
+
+        private void OnInitFinish(bool success)
+        {
+            // 初始化结束，建议在该回调后请求广告
+            Debug.LogWarning("[A] OnInitFinish");
         }
 
         public static bool IsModuleInitialized(Type moduleType)

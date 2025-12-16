@@ -9,6 +9,25 @@
 
   
     <application>
+        <!-- Google Play Services -->
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+        <!-- 启用广告加载优化标志，以减少广告加载导致 ANR 的发生 -->
+        <meta-data
+               android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
+                  android:value="true"/>
+        
+        <!--Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713-->
+        <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="ca-app-pub-4858200260575175~3863890590"/>
+        
+        <!-- Google Ad Manager-->
+        <meta-data
+                android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+                android:value="true"/>
+
         <activity android:name="com.unity3d.player.UnityPlayerActivity"
                   android:theme="@style/UnityThemeSelector">
             <intent-filter>

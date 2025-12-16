@@ -1,0 +1,416 @@
+﻿#if UNITY_IOS
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using AOT;
+using TradplusSDK.Api;
+using TradplusSDK.ThirdParty.MiniJSON;
+
+namespace TradplusSDK.iOS
+{
+    public class TradplusAdsiOS
+    {
+        private static TradplusAdsiOS _instance;
+
+        public static TradplusAdsiOS Instance()
+        {
+            if (_instance == null)
+            {
+                _instance = new TradplusAdsiOS();
+            }
+            return _instance;
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TPSetForbidNetworkIdList(string list);
+        public void setForbidNetworkIdList(Array list)
+        {
+            if (list != null)
+            {
+                String infoString = Json.Serialize(list);
+                TPSetForbidNetworkIdList(infoString);
+            }
+        }
+
+
+        [DllImport("__Internal")]
+        private static extern void TPSetPlatformLimit(string limitList);
+        public void setPlatformLimit(Array list)
+        {
+            if(list != null)
+            {
+                String infoString = Json.Serialize(list);
+                TPSetPlatformLimit(infoString);
+            }
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TTDStartUID2(string customMap);
+        public void startUID2(TTDUID2Extra extra)
+        {
+            Dictionary<String, String> infoDic = new Dictionary<string, String>();
+            if(extra.subscriptionID != null)
+            {
+                infoDic.Add("subscriptionID",extra.subscriptionID);
+            }
+            if(extra.serverPublicKey != null)
+            {
+                infoDic.Add("serverPublicKey",extra.serverPublicKey);
+            }
+            if (extra.email != null)
+            {
+                infoDic.Add("email", extra.email);
+            }
+            if (extra.emailHash != null)
+            {
+                infoDic.Add("emailHash", extra.emailHash);
+            }
+            if (extra.phone != null)
+            {
+                infoDic.Add("phone", extra.phone);
+            }
+            if (extra.phoneHash != null)
+            {
+                infoDic.Add("phoneHash", extra.phoneHash);
+            }
+            if (extra.appName != null)
+            {
+                infoDic.Add("appName", extra.appName);
+            }
+            String testMode = "0";
+            if(extra.isTestMode)
+            {
+                testMode = "1";
+            }
+            infoDic.Add("isTestMode", testMode);
+            if (extra.customURLString != null)
+            {
+                infoDic.Add("customURLString", extra.customURLString);
+            }
+            String infoString = Json.Serialize(infoDic);
+            TTDStartUID2(infoString);
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TTDUID2ResetSetting();
+        public void resetSetting()
+        {
+            TTDUID2ResetSetting();
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusCheckCurrentArea();
+        public void CheckCurrentArea()
+        {
+            TradplusCheckCurrentArea();
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusInitSDK(string appId);
+        public void InitSDK(string appId)
+        {
+            TradplusInitSDK(appId);
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetCustomMap(string customMap);
+        public void SetCustomMap(Dictionary<string, string> customMap)
+        {
+            string customMapString = null;
+            if (customMap != null)
+            {
+                customMapString = Json.Serialize(customMap);
+            }
+            TradplusSetCustomMap(customMapString);
+        }
+
+        [DllImport("__Internal")]
+        private static extern string TradplusVersion();
+        public string Version()
+        {
+            return TradplusVersion();
+        }
+
+        [DllImport("__Internal")]
+        private static extern bool TradplusIsEUTraffic();
+        public bool IsEUTraffic()
+        {
+            return TradplusIsEUTraffic();
+        }
+
+        [DllImport("__Internal")]
+        private static extern bool TradplusIsCalifornia();
+        public bool IsCalifornia()
+        {
+            return TradplusIsCalifornia();
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetGDPRDataCollection(bool canDataCollection);
+        public void SetGDPRDataCollection(bool canDataCollection)
+        {
+            TradplusSetGDPRDataCollection(canDataCollection);
+        }
+
+        [DllImport("__Internal")]
+        private static extern int TradplusGetGDPRDataCollection();
+        public int GetGDPRDataCollection()
+        {
+            return TradplusGetGDPRDataCollection();
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetCCPADoNotSell(bool canDataCollection);
+        public void SetCCPADoNotSell(bool canDataCollection)
+        {
+            TradplusSetCCPADoNotSell(canDataCollection);
+        }
+
+        [DllImport("__Internal")]
+        private static extern int TradplusGetCCPADoNotSell();
+        public int GetCCPADoNotSell()
+        {
+            return TradplusGetCCPADoNotSell();
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetCOPPAIsAgeRestrictedUser(bool isChild);
+        public void SetCOPPAIsAgeRestrictedUser(bool isChild)
+        {
+            TradplusSetCOPPAIsAgeRestrictedUser(isChild);
+        }
+
+        [DllImport("__Internal")]
+        private static extern int TradplusGetCOPPAIsAgeRestrictedUser();
+        public int GetCOPPAIsAgeRestrictedUser()
+        {
+            return TradplusGetCOPPAIsAgeRestrictedUser();
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetLGPDConsent(bool consent);
+        public void SetLGPDConsent(bool consent)
+        {
+            TradplusSetLGPDConsent(consent);
+        }
+
+        [DllImport("__Internal")]
+        private static extern int TradplusGetLGPDConsent();
+        public int GetLGPDConsent()
+        {
+            return TradplusGetLGPDConsent();
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetOpenPersonalizedAd(bool open);
+        public void SetOpenPersonalizedAd(bool open)
+        {
+            TradplusSetOpenPersonalizedAd(open);
+        }
+
+        [DllImport("__Internal")]
+        private static extern bool TradplusIsOpenPersonalizedAd();
+        public bool IsOpenPersonalizedAd()
+        {
+            return TradplusIsOpenPersonalizedAd();
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusClearCache(string adUnitId);
+        public void ClearCache(string adUnitId)
+        {
+            TradplusClearCache(adUnitId);
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetAutoExpiration(bool autoCheck);
+        public void SetAutoExpiration(bool autoCheck)
+        {
+            TradplusSetAutoExpiration(autoCheck);
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetDefaultConfig(string adUnitId, string config);
+        public void SetDefaultConfig(string adUnitId, string config)
+        {
+            TradplusSetDefaultConfig(adUnitId,config);
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetPAConsent(int consentType);
+        public void SetPAConsent(TPPAGPAConsentType consentType)
+        {
+            TradplusSetPAConsent((int)consentType);
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetCustomTestID(string customTestID);
+        public void SetCustomTestID(string customTestID)
+        {
+            TradplusSetCustomTestID(customTestID);
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusCheckAutoExpiration();
+        public void CheckAutoExpiration()
+        {
+            TradplusCheckAutoExpiration();
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetCnServer(bool onlyCn);
+        public void SetCnServer(bool onlyCn)
+        {
+            TradplusSetCnServer(onlyCn);
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusSetSettingDataParam(string settingInfo);
+        public void SetSettingDataParam(Dictionary<string, object> settingMap)
+        {
+            string settingMapString = null;
+            if (settingMap != null)
+            {
+                settingMapString = Json.Serialize(settingMap);
+            }
+            TradplusSetSettingDataParam(settingMapString);
+        }
+
+        [DllImport("__Internal")]
+        private static extern void TradplusOpenTradPlusTool();
+        public void OpenTradPlusTool(string appId)
+        {
+            TradplusOpenTradPlusTool();
+        }
+
+        //注册回调全局展示回调
+        [DllImport("__Internal")]
+        private static extern void TradplusSDKSetAdImpressionCallback(
+            TPOnAdImpressionCallback onAdImpressionCallback
+        );
+        public void AddGlobalAdImpressionListener()
+        {
+            TradplusSDKSetAdImpressionCallback(
+                OnAdImpressionCallback
+                );
+        }
+
+        //注册回调
+        [DllImport("__Internal")]
+        private static extern void TradplusSDKSetCallbacks(
+            TPOnInitFinishCallback onInitFinishCallback,
+            TPOnDialogClosedCallback onDialogClosedCallback,
+            TPOnCurrentAreaSuccessCallback onCurrentAreaSuccessCallback,
+            TPOnCurrentAreaFailedCallback onCurrentAreaFailedCallback,
+            TPOnUID2StartFinishCallback onUID2StartFinishCallback
+        );
+        public TradplusAdsiOS()
+        {
+            TradplusSDKSetCallbacks(
+                OnInitFinishCallback,
+                OnDialogClosedCallback,
+                OnCurrentAreaSuccessCallback,
+                OnCurrentAreaFailedCallback,
+                OnUID2StartFinishCallback
+                );
+        }
+
+        public void ClearCallback()
+        {
+            TradplusSDKSetCallbacks(
+                null,
+                null,
+                null,
+                null,
+                null
+                );
+        }
+
+        //OnInitFinish
+        public event Action<bool> OnInitFinish;
+
+        internal delegate void TPOnInitFinishCallback(bool success);
+        [MonoPInvokeCallback(typeof(TPOnInitFinishCallback))]
+        private static void OnInitFinishCallback(bool success)
+        {
+            if (TradplusAdsiOS.Instance().OnInitFinish != null)
+            {
+                TradplusAdsiOS.Instance().OnInitFinish(success);
+            }
+        }
+
+        //OnUID2StartFinish
+        public event Action<string> OnUID2StartFinish;
+        internal delegate void TPOnUID2StartFinishCallback(string errorMsg);
+        [MonoPInvokeCallback(typeof(TPOnUID2StartFinishCallback))]
+        private static void OnUID2StartFinishCallback(string errorMsg)
+        {
+            if (TradplusAdsiOS.Instance().OnUID2StartFinish != null)
+            {
+                String errorInfo = null;
+                if(errorMsg != null && errorMsg.Length > 0)
+                {
+                    errorInfo = errorMsg;
+                }
+                TradplusAdsiOS.Instance().OnUID2StartFinish(errorInfo);
+            }
+        }
+
+        //OnDialogClosed
+        public event Action<int> OnDialogClosed;
+
+        internal delegate void TPOnDialogClosedCallback(int level);
+        [MonoPInvokeCallback(typeof(TPOnDialogClosedCallback))]
+        private static void OnDialogClosedCallback(int level)
+        {
+            if (TradplusAdsiOS.Instance().OnDialogClosed != null)
+            {
+                TradplusAdsiOS.Instance().OnDialogClosed(level);
+            }
+        }
+
+        //OnCurrentAreaSuccess
+        public event Action<bool, bool, bool> OnCurrentAreaSuccess;
+
+        internal delegate void TPOnCurrentAreaSuccessCallback(bool isEu, bool isCn, bool isCa);
+        [MonoPInvokeCallback(typeof(TPOnCurrentAreaSuccessCallback))]
+        private static void OnCurrentAreaSuccessCallback(bool isEu, bool isCn, bool isCa)
+        {
+            if (TradplusAdsiOS.Instance().OnCurrentAreaSuccess != null)
+            {
+                TradplusAdsiOS.Instance().OnCurrentAreaSuccess(isEu,isCn,isCa);
+            }
+        }
+
+        //OnCurrentAreaFailed
+        public event Action<string> OnCurrentAreaFailed;
+
+        internal delegate void TPOnCurrentAreaFailedCallback(string msg);
+        [MonoPInvokeCallback(typeof(TPOnCurrentAreaFailedCallback))]
+        private static void OnCurrentAreaFailedCallback(string msg)
+        {
+            if (TradplusAdsiOS.Instance().OnCurrentAreaFailed != null)
+            {
+                TradplusAdsiOS.Instance().OnCurrentAreaFailed(msg);
+            }
+        }
+
+        //OnGlobalAdImpression
+        public event Action<Dictionary<string, object>> OnGlobalAdImpression;
+
+        internal delegate void TPOnAdImpressionCallback(string msg);
+        [MonoPInvokeCallback(typeof(TPOnAdImpressionCallback))]
+        private static void OnAdImpressionCallback(string msg)
+        {
+            if (TradplusAdsiOS.Instance().OnGlobalAdImpression != null)
+            {
+                Dictionary<string, object> adInfo = Json.Deserialize(msg) as Dictionary<string, object>;
+                TradplusAdsiOS.Instance().OnGlobalAdImpression(adInfo);
+            }
+        }
+    }
+}
+
+#endif

@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+using System.Collections.Generic; 
+using TradplusSDK.Api;
+
 namespace Watermelon
 {
     public class AdDummyController : MonoBehaviour
@@ -359,7 +362,62 @@ namespace Watermelon
             controller.rewardedVideoCloseButton = rvCloseButton;
             controller.rewardedVideoRewardButton = rvRewardButton;
 
+            //流量分组
+            Dictionary<string, string> customMap = new Dictionary<string, string>();
+            //local自定义Map，仅Android支持
+            Dictionary<string, object> localParams = new Dictionary<string, object>();
+
+            TPBannerExtra extra = new TPBannerExtra();
+            extra.x = 0;
+            extra.y = 0;
+            extra.width = 320;
+            extra.height = 50;
+            extra.closeAutoShow = false;
+            extra.adPosition = TradplusBase.AdPosition.TopLeft;
+            extra.customMap = customMap;
+            extra.localParams = localParams;
+            extra.className = "tp_native_banner_ad_unit";
+
+            TradplusAds.Instance().OnInitFinish += controller.OnInitFinish;
+            TradplusBanner.Instance().LoadBannerAd("7C3CDE73C2138D1F04A99A96F7CBD612", "sceneId", extra);
+            TradplusBanner.Instance().OnBannerLoaded += controller.OnlLoaded;
+            TradplusBanner.Instance().OnBannerLoadFailed += controller.OnLoadFailed;
+            TradplusBanner.Instance().OnBannerImpression += controller.OnImpression;
+            TradplusBanner.Instance().OnBannerShowFailed += controller.OnShowFailed;
+
+            string packageName = Application.identifier;
+            Debug.Log("[A] [Tradplus] 包名: " + packageName);
+
             return controller;
+        }
+        
+        void OnInitFinish(bool success)
+        {
+            // 初始化成功，发起广告请求，才能拿到GAID等参数
+            Debug.LogWarning("[A] [Tradplus] OnInitFinish");
+        }
+
+        void OnlLoaded(string adunit, Dictionary<string, object> adInfo)
+        {
+            // 广告加载成功
+            //v1.1.2优化回调方式，一次loadAd对应一次loaded回调，不调用不回调。
+            Debug.Log("[A] [Tradplus] OnlLoaded");
+        }
+
+        void OnLoadFailed(string adunit, Dictionary<string, object> error)
+        {
+            // 广告加载失败
+            Debug.Log("[A] [Tradplus] OnLoadFailed");
+        }
+        void OnImpression(string adunit, Dictionary<string, object> adInfo)
+        {
+            // 广告展示成功
+            Debug.Log("[A] [Tradplus] OnImpression");
+        }
+        void OnShowFailed(string adunit, Dictionary<string, object> adInfo, Dictionary<string, object> error)
+        {
+            //广告展示失败
+            Debug.Log("[A] [Tradplus] OnShowFailed");
         }
     }
 }
