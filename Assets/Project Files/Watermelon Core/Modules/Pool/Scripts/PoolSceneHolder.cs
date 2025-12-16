@@ -1,0 +1,27 @@
+using UnityEngine;
+
+namespace Watermelon
+{
+    public class PoolSceneHolder : MonoBehaviour
+    {
+        [SerializeField] Pool[] pools;
+
+        public PoolMultiple poolMultiple;
+
+        private void Awake()
+        {
+            foreach(Pool pool in pools)
+            {
+                pool.Init();
+            }
+        }
+
+        private void OnDestroy()
+        {
+            foreach (Pool pool in pools)
+            {
+                PoolManager.DestroyPool(pool);
+            }
+        }
+    }
+}

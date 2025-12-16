@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e068d4b61b94914da390f6ae91e0b2b, type: 3}
+  m_Name: Level_034
+  m_EditorClassIdentifier: 
+  stages:
+  - holePositions:
+    - position: {x: 1.14, y: -0.35, z: 0}
+      hasScrew: 1
+    - position: {x: 1.14, y: 1.935, z: 0}
+      hasScrew: 1
+    - position: {x: 1.14, y: -1.56, z: 0}
+      hasScrew: 1
+    - position: {x: 1.14, y: -3.835, z: 0}
+      hasScrew: 1
+    - position: {x: -4.25, y: -3.835, z: 0}
+      hasScrew: 1
+    - position: {x: 4.25, y: -3.835, z: 0}
+      hasScrew: 1
+    - position: {x: -1.14, y: -0.35, z: 0}
+      hasScrew: 1
+    - position: {x: -1.14, y: 1.935, z: 0}
+      hasScrew: 1
+    - position: {x: -1.14, y: -1.56, z: 0}
+      hasScrew: 1
+    - position: {x: -1.14, y: -3.835, z: 0}
+      hasScrew: 1
+    - position: {x: 0, y: 5.93, z: 0}
+      hasScrew: 0
+    - position: {x: 1.25, y: 5.93, z: 0}
+      hasScrew: 0
+    - position: {x: -1.25, y: 5.93, z: 0}
+      hasScrew: 0
+    planksData:
+    - plankType: 21
+      plankLayer: 0
+      position: {x: 0, y: 2.87, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 1.9458, y: 1.9458, z: 1.9458}
+      screwsPositions:
+      - {x: 1.14, y: -0.93499994, z: 0}
+      - {x: -1.14, y: -0.93499994, z: 0}
+    - plankType: 19
+      plankLayer: 0
+      position: {x: 0, y: -0.92818, z: 0}
+      rotation: {x: -0, y: 0, z: 358}
+      scale: {x: 1.0442, y: 1.0442, z: 1.0442}
+      screwsPositions:
+      - {x: 1.1191273, y: 0.61761326, z: 0}
+      - {x: 1.1613557, y: -0.59164953, z: 0}
+      - {x: -1.1594838, y: 0.5380422, z: 0}
+      - {x: -1.1172552, y: -0.6712206, z: 0}
+    - plankType: 19
+      plankLayer: 0
+      position: {x: 0, y: -4.3218, z: 0}
+      rotation: {x: -0, y: -0, z: 2.0000052}
+      scale: {x: 1.0442, y: 1.0442, z: 1.0442}
+      screwsPositions:
+      - {x: 1.1562947, y: 0.44671813, z: 0}
+      - {x: -1.1223164, y: 0.52628917, z: 0}
+    - plankType: 14
+      plankLayer: 1
+      position: {x: 0, y: 0.78, z: 0}
+      rotation: {x: -0, y: 0, z: 315.0001}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: 1.6051323, y: 0.0070682196, z: 0}
+      - {x: -0.010603718, y: 1.62281, z: 0}
+      - {x: -0.0070739025, y: -1.6051323, z: 0}
+      - {x: -1.62281, y: 0.010609464, z: 0}
+    - plankType: 14
+      plankLayer: 1
+      position: {x: 0, y: -2.72, z: 0}
+      rotation: {x: -0, y: 0, z: 315.0001}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: -0.014139327, y: 1.6263456, z: 0}
+      - {x: 1.5945258, y: 0.01767483, z: 0}
+      - {x: -1.6263456, y: 0.014145085, z: 0}
+      - {x: -0.017680475, y: -1.5945257, z: 0}
+    - plankType: 5
+      plankLayer: 2
+      position: {x: 0, y: -3.86, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: 1.14, y: 0.024999857, z: 0}
+      - {x: -4.25, y: 0.024999857, z: 0}
+      - {x: 4.25, y: 0.024999857, z: 0}
+      - {x: -1.14, y: 0.024999857, z: 0}
+    - plankType: 3
+      plankLayer: 4
+      position: {x: 2.695, y: -2.0925, z: 0}
+      rotation: {x: -0, y: -0, z: 131.74559}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: 2.335451, y: 0.000000023207058, z: 0}
+      - {x: -2.3354511, y: -0.00000003277769, z: 0}
+    - plankType: 3
+      plankLayer: 4
+      position: {x: -2.695, y: -2.0925, z: 0}
+      rotation: {x: -0, y: -0, z: 48.254406}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: -2.3354511, y: -0.000000111838084, z: 0}
+      - {x: 2.335451, y: 0.0000001214087, z: 0}
+    timerOverride:
+      enabled: 0
+      newValue: 0
+  invalidStageIndex: -1
+  presentHolesCount: 1
+  requiredHolesCount: 3
+  useInRandomizer: 1
+  overrideLevelReward:
+    enabled: 0
+    newValue: 0
+  powerUpsReward: []

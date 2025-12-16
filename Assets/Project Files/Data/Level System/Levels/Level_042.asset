@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e068d4b61b94914da390f6ae91e0b2b, type: 3}
+  m_Name: Level_042
+  m_EditorClassIdentifier: 
+  stages:
+  - holePositions:
+    - position: {x: 1.38, y: -1.5, z: 0}
+      hasScrew: 1
+    - position: {x: -1.38, y: -1.5, z: 0}
+      hasScrew: 1
+    - position: {x: 0, y: 1.71, z: 0}
+      hasScrew: 1
+    - position: {x: 1.87, y: 1.71, z: 0}
+      hasScrew: 1
+    - position: {x: -1.87, y: 1.71, z: 0}
+      hasScrew: 1
+    - position: {x: 0, y: -0.123, z: 0}
+      hasScrew: 1
+    - position: {x: 0, y: 3.71, z: 0}
+      hasScrew: 1
+    - position: {x: 3.5, y: -0.03999996, z: 0}
+      hasScrew: 1
+    - position: {x: -3.5, y: -0.03999996, z: 0}
+      hasScrew: 1
+    - position: {x: 0, y: 6.01, z: 0}
+      hasScrew: 0
+    - position: {x: 0, y: -3.2399998, z: 0}
+      hasScrew: 0
+    planksData:
+    - plankType: 18
+      plankLayer: 0
+      position: {x: 0, y: -2.39, z: 0}
+      rotation: {x: -0, y: 0, z: 270.00018}
+      scale: {x: 1.1149, y: 1.1149, z: 1.1149}
+      screwsPositions:
+      - {x: -0.88999534, y: 1.380003, z: 0}
+      - {x: -0.89000475, y: -1.3799969, z: 0}
+    - plankType: 15
+      plankLayer: 0
+      position: {x: -1.82, y: -0.83, z: 0}
+      rotation: {x: -0, y: 0, z: 180.00034}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: -1.8200041, y: -0.7069894, z: 0}
+      - {x: 1.6799954, y: -0.7900098, z: 0}
+    - plankType: 15
+      plankLayer: 1
+      position: {x: 1.82, y: -0.83, z: 0}
+      rotation: {x: -0, y: 0, z: 180.00034}
+      scale: {x: -1, y: 1, z: 1}
+      screwsPositions:
+      - {x: 1.819996, y: -0.7070105, z: 0}
+      - {x: -1.6800045, y: -0.78999025, z: 0}
+    - plankType: 3
+      plankLayer: 1
+      position: {x: 0, y: 1.71, z: 0}
+      rotation: {x: 0, y: 0, z: 180}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: -0, y: 0, z: 0}
+      - {x: -1.87, y: 0.00000016348059, z: 0}
+      - {x: 1.87, y: -0.00000016348059, z: 0}
+    - plankType: 21
+      plankLayer: 2
+      position: {x: 0, y: 0.87, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+      scale: {x: 1.4154643, y: 1.4154643, z: 1.4154643}
+      screwsPositions:
+      - {x: 0, y: 0.84000003, z: 0}
+      - {x: 0, y: -0.99300003, z: 0}
+    - plankType: 4
+      plankLayer: 2
+      position: {x: -1.75, y: 1.835, z: 0}
+      rotation: {x: -0, y: 0, z: 226.97493}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: 0.1732601, y: -0.0024368584, z: 0}
+      - {x: -2.5647855, y: 0.000000059604645, z: 0}
+      - {x: 2.5647855, y: -0.000000059604645, z: 0}
+    - plankType: 4
+      plankLayer: 3
+      position: {x: 1.75, y: 1.835, z: 0}
+      rotation: {x: -0, y: 0, z: 313.02505}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: 0.1732601, y: 0.0024368837, z: 0}
+      - {x: -2.5647855, y: -0.00000043585896, z: 0}
+      - {x: 2.5647855, y: 0.00000043585896, z: 0}
+    - plankType: 3
+      plankLayer: 4
+      position: {x: 0.245, y: 0.10500002, z: 0}
+      rotation: {x: -0, y: 0, z: 224.64523}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: 2.2839987, y: -0.00000016971404, z: 0}
+      - {x: -2.2839987, y: 0.00000016971404, z: 0}
+      - {x: 0.33452952, y: -0.009949675, z: 0}
+    - plankType: 3
+      plankLayer: 5
+      position: {x: -0.245, y: 0.10500002, z: 0}
+      rotation: {x: -0, y: -0, z: 135.35477}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: -2.2839987, y: -0.0000002665716, z: 0}
+      - {x: 2.2839987, y: 0.0000002665716, z: 0}
+      - {x: -0.33452955, y: -0.00994969, z: 0}
+    timerOverride:
+      enabled: 0
+      newValue: 0
+  invalidStageIndex: -1
+  presentHolesCount: 1
+  requiredHolesCount: 2
+  useInRandomizer: 1
+  overrideLevelReward:
+    enabled: 0
+    newValue: 0
+  powerUpsReward: []

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e068d4b61b94914da390f6ae91e0b2b, type: 3}
+  m_Name: Level_002
+  m_EditorClassIdentifier: 
+  stages:
+  - holePositions:
+    - position: {x: 0, y: 3.97, z: 0}
+      hasScrew: 0
+    - position: {x: 2.25, y: 2, z: 0}
+      hasScrew: 1
+    - position: {x: -2.25, y: 2, z: 0}
+      hasScrew: 1
+    - position: {x: 1.05, y: -1.28, z: 0}
+      hasScrew: 1
+    - position: {x: -1.05, y: -1.28, z: 0}
+      hasScrew: 1
+    planksData:
+    - plankType: 3
+      plankLayer: 0
+      position: {x: 0.57, y: 0.33, z: 0}
+      rotation: {x: -0, y: -0, z: 45.000027}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: 2.3688078, y: -0.0070721437, z: 0}
+      - {x: -2.2839549, y: 0.0070719393, z: 0}
+    - plankType: 3
+      plankLayer: 1
+      position: {x: -0.57, y: 0.33, z: 0}
+      rotation: {x: -0, y: 0, z: 314.99997}
+      scale: {x: 1, y: 1, z: 1}
+      screwsPositions:
+      - {x: -2.3688076, y: -0.0070725926, z: 0}
+      - {x: 2.2839549, y: 0.0070723724, z: 0}
+    timerOverride:
+      enabled: 0
+      newValue: 0
+  invalidStageIndex: -1
+  presentHolesCount: 0
+  requiredHolesCount: 0
+  useInRandomizer: 1
+  overrideLevelReward:
+    enabled: 1
+    newValue: 200
+  powerUpsReward: []
