@@ -198,6 +198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Skin Store
       objectReference: {fileID: 0}
+    - target: {fileID: 5029019629099302171, guid: 6ab7b2ae81cc462429d971366cb819ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5805357095513177228, guid: 6ab7b2ae81cc462429d971366cb819ef,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2026,6 +2031,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5178066047858781992}
     m_Modifications:
+    - target: {fileID: 101190841430127786, guid: 33b080e358fe9614fa1d26241d1ed980,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -299.1201
+      objectReference: {fileID: 0}
     - target: {fileID: 106557528675721329, guid: 33b080e358fe9614fa1d26241d1ed980,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2310,6 +2320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI IAP Store
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535794112435177295, guid: 33b080e358fe9614fa1d26241d1ed980,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8303433819623793566, guid: 33b080e358fe9614fa1d26241d1ed980,
         type: 3}

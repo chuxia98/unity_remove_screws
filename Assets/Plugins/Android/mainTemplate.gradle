@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+**APPLY_PLUGINS**
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //TU (Necessary)
+    api "com.thinkup.sdk:core-tpn:6.4.69.2"
+    api "com.thinkup.sdk:nativead-tpn:6.4.69.2"
+    api "com.thinkup.sdk:banner-tpn:6.4.69.2"
+    api "com.thinkup.sdk:interstitial-tpn:6.4.69.2"
+    api "com.thinkup.sdk:rewardedvideo-tpn:6.4.69.2"
+    api "com.thinkup.sdk:splash-tpn:6.4.69.2"
+    // Debugger UI Tools
+    implementation 'com.thinkup.sdk:debugger-ui:1.1.2'
+
+    //Androidx (Necessary)
+    api "androidx.appcompat:appcompat:1.6.1"
+    api "androidx.browser:browser:1.4.0"
+
+    //Tramini
+    api "com.thinkup.sdk:tramini-plugin-tpn:6.4.69.2"
+**DEPS**}
+
+android {
+    namespace "com.unity3d.player"
+    ndkPath "**NDKPATH**"
+    compileSdkVersion **APIVERSION**
+    buildToolsVersion '**BUILDTOOLS**'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    defaultConfig {
+        minSdkVersion **MINSDKVERSION**
+        targetSdkVersion **TARGETSDKVERSION**
+        ndk {
+            abiFilters **ABIFILTERS**
+        }
+        versionCode **VERSIONCODE**
+        versionName '**VERSIONNAME**'
+        consumerProguardFiles 'proguard-unity.txt'**USER_PROGUARD**
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }**PACKAGING_OPTIONS**
+}
+**IL_CPP_BUILD_SETUP**
+**SOURCE_BUILD_SETUP**
+**EXTERNAL_SOURCES**

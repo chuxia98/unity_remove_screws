@@ -4,6 +4,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using AnyThinkAds.Api;
 
 #if UNITY_IOS
 using Unity.Advertisement.IosSupport;
@@ -24,7 +25,8 @@ namespace Watermelon
 
         private static readonly AdProviderHandler[] AD_PROVIDERS = new AdProviderHandler[]
         {
-            new AdDummyHandler(AdProvider.Dummy), 
+            new AdDummyHandler(AdProvider.Dummy),
+            new ATHandler(AdProvider.AT),
 
 #if MODULE_ADMOB
             new AdMobHandler(AdProvider.AdMob), 
@@ -73,9 +75,12 @@ namespace Watermelon
 
         private static AdSave save;
 
+        private static ATContainer atContainer;
+
         #region Initialize
         public static void Init(MonetizationSettings monetizationSettings)
         {
+            Debug.Log("[A] start init");
             if (isModuleInitialized)
             {
                 Debug.LogWarning("[AdsManager]: Module already exists!");
@@ -111,6 +116,7 @@ namespace Watermelon
             Initializer.GameObject.AddComponent<AdsManager.AdEventExecutor>();
 
             advertisingActiveModules = new Dictionary<AdProvider, AdProviderHandler>();
+
             for (int i = 0; i < AD_PROVIDERS.Length; i++)
             {
                 if (IsModuleEnabled(AD_PROVIDERS[i].ProviderType))
@@ -121,6 +127,7 @@ namespace Watermelon
 
             if (Monetization.VerboseLogging)
             {
+                Debug.Log("[A] >>>> Monetization.VerboseLogging");
                 if (settings.BannerType != AdProvider.Disable && !advertisingActiveModules.ContainsKey(settings.BannerType))
                     Debug.LogWarning("[AdsManager]: Banner type (" + settings.BannerType + ") is selected, but isn't active!");
 

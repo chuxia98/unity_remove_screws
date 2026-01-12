@@ -14,7 +14,7 @@ namespace Watermelon
             Monetization.IsActive = settings.IsModuleActive;
             Monetization.VerboseLogging = settings.VerboseLogging;
             Monetization.DebugMode = settings.DebugMode;
-
+            Debug.Log("[A] MonetizationInitModule > CreateComponent");
             AdsManager.Init(settings);
             IAPManager.Init(settings);
         }

@@ -6,9 +6,19 @@
 	
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
   
     <application>
+        <!-- Android 9以上适配 -->
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        
+        <!-- 如果有集成Admob SDK，则需要添加以下配置，value的值是Admob后台创建的应用的ID -->
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" 
+                            android:value="ca-app-pub-4858200260575175~3863890590"/>
+
         <activity android:name="com.unity3d.player.UnityPlayerActivity"
                   android:theme="@style/UnityThemeSelector">
             <intent-filter>

@@ -16,7 +16,7 @@ namespace Watermelon
         [SerializeField] bool verboseLogging = false;
         public bool VerboseLogging => verboseLogging;
 
-        [SerializeField] bool debugMode = false;
+        [SerializeField] bool debugMode = true;
         public bool DebugMode => debugMode;
     }
 }

@@ -12,7 +12,7 @@ namespace Watermelon
             {
                 monetizationSettings = MonetizationSettingsEditor.CreateAsset(false);
             }
-
+            //Debug.log
             serializedObject.Update();
             serializedObject.FindProperty("settings").objectReferenceValue = monetizationSettings;
             serializedObject.ApplyModifiedProperties();

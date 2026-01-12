@@ -6,6 +6,7 @@
         Dummy = 1,
         AdMob = 2,
         UnityAdsLegacy = 3,
-        IronSource = 4
+        IronSource = 4,
+        AT = 5,
     }
 }

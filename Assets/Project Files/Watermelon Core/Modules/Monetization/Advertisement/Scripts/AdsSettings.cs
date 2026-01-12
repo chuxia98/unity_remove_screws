@@ -7,13 +7,13 @@ namespace Watermelon
     [HelpURL("https://www.notion.so/wmelongames/Advertisement-221053e32d4047bb880275027daba9f0?pvs=4")]
     public class AdsSettings : ScriptableObject
     {
-        [SerializeField] AdProvider bannerType = AdProvider.Dummy;
+        [SerializeField] AdProvider bannerType = AdProvider.AT;
         public AdProvider BannerType => bannerType;
 
-        [SerializeField] AdProvider interstitialType = AdProvider.Dummy;
+        [SerializeField] AdProvider interstitialType = AdProvider.AT;
         public AdProvider InterstitialType => interstitialType;
 
-        [SerializeField] AdProvider rewardedVideoType = AdProvider.Dummy;
+        [SerializeField] AdProvider rewardedVideoType = AdProvider.AT;
         public AdProvider RewardedVideoType => rewardedVideoType;
 
         // Providers
@@ -29,6 +29,10 @@ namespace Watermelon
         // Dummy
         [SerializeField] AdDummyContainer dummyContainer;
         public AdDummyContainer DummyContainer => dummyContainer;
+
+        // AT
+        [SerializeField] ATContainer atContainer;
+        public ATContainer AtContainer => atContainer;
 
         [Group("Settings")]
         [SerializeField] bool loadAdsOnStart = true;
@@ -55,7 +59,7 @@ namespace Watermelon
         public bool AutoShowInterstitial => autoShowInterstitial;
 
         [Group("Privacy")]
-        [SerializeField] bool isGDPREnabled = false;
+        [SerializeField] bool isGDPREnabled = true;
         public bool IsGDPREnabled => isGDPREnabled;
 
         [Group("Privacy")]

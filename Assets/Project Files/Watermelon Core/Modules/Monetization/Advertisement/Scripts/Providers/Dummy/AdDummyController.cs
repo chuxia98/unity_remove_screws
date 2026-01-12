@@ -141,7 +141,8 @@ namespace Watermelon
 
             // Banner
             GameObject bannerObject = new GameObject("Banner");
-            bannerObject.SetActive(false);
+            //bannerObject.SetActive(false);
+            bannerObject.SetActive(true);
 
             RectTransform bannerRectTransform = bannerObject.AddComponent<RectTransform>();
             bannerRectTransform.SetParent(go.transform);
